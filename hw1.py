@@ -16,8 +16,6 @@ cov = (c * torch.ones((D, D))).float()
 idx = [i for i in range(D)]
 cov[idx, idx] = 1
 
-cov[idx, idx] = 1 * torch.ones(D).float()
-
 px = torch.distributions.MultivariateNormal(loc=mu,covariance_matrix=cov)
 
 # Because the question say draw	ing N samples of N(0,1) noise epsilon
