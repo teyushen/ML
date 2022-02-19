@@ -21,13 +21,13 @@ px = torch.distributions.MultivariateNormal(loc=mu,covariance_matrix=cov)
 # Because the question say draw	ing N samples of N(0,1) noise epsilon
 epsilon = torch.distributions.normal.Normal(torch.tensor([0.0]), torch.tensor([1])) 
 
-y = w1true * px.sample([N])[:,0] + epsilon.sample([N])[:,0]
+sa = px.sample([N])
+
+y = w1true * sa[:,0] + epsilon.sample([N])[:,0]
 print(y.shape)
 
 
 (C)
-## 
-sa = px.sample([N])
 ## w1 hat all feature
 torch.t(sa).matmul(sa).inverse().matmul(torch.t(sa)).matmul(y)
 
