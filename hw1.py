@@ -11,7 +11,7 @@ D = 3
 # makes a D-dim vector
 mu = torch.zeros(D)
 c = torch.rand(1)
-cov = (c * torch.ones((D, D))).float()
+cov = (c * torch.ones((D, D)))
 
 idx = [i for i in range(D)]
 cov[idx, idx] = 1
