@@ -32,3 +32,5 @@ print(y.shape)
 torch.t(sa).matmul(sa).inverse().matmul(torch.t(sa)).matmul(y)
 
 ## I don;t know how to do the w1, because it's a vector not a matrix
+sa_1=sa[:,0]
+torch.outer(torch.t(sa_1), sa_1).inverse().matmul(torch.t(sa_1)).matmul(y)
